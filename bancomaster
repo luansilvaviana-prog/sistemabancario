@@ -1,1 +1,38 @@
+## Sistema Bancário PROGRAMAÇÃO ORIENTADA A OBJETOS
+print("****************************************************")
+print("******************SISTEMA BANCÁRIO******************")
+print("****************************************************")
 
+def criar_conta(numero, titular, saldo, limite):
+    conta = {
+        "numero": numero,
+        "titular": titular,
+        "saldo": saldo,
+        "limite": limite
+    }
+    return conta
+
+def deposita(conta, valor):
+    conta["saldo"] += valor
+
+
+def saca(conta, valor):
+    conta["saldo"] -= valor
+
+
+def extrato(conta):
+    print("Saldo {}".format(conta["saldo"]))
+   
+def exibir_dados(conta):
+    print("conta bancária criada com sucesso!\n")
+    print("Número da conta: {}".format(conta["numero"]))
+    print("Titular: {}".format(conta["titular"]))
+    print("Saldo: {}".format(conta["saldo"]))
+    print("Limite: {}".format(conta["limite"]))
+
+
+conta = criar_conta(123, "João", 1000.0, 500.0)
+exibir_dados(conta)
+deposita(conta, 500.0)
+saca(conta, 200.0)
+extrato(conta)
